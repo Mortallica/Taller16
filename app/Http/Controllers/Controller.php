@@ -27,7 +27,7 @@ class Controller extends BaseController
     public function randomImg()
     {
         $randomNumberImg = (rand(0,(9)));
-        $randomQuoteImg = "./public/random-images/"+$randomNumberImg+".jpg";
+        $randomQuoteImg = "./public/random-images/"+($randomNumberImg+1)+".jpg";
         return view('image.show')->with("img",$randomQuoteImg);
     }
 }
