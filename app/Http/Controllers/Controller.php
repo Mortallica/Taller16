@@ -16,7 +16,6 @@ class Controller extends BaseController
     );
 
     public function index()
-
     {
         $totalQuotes = (count(Controller::$quotes));
         $randomNumber = (rand(0,($totalQuotes-1)));
@@ -26,8 +25,11 @@ class Controller extends BaseController
 
     public function randomImg()
     {
+        $randomQuoteImg = [];
         $randomNumberImg = (rand(0,(9)));
-        $randomQuoteImg = "./public/random-images/"+($randomNumberImg+1)+".jpg";
+        $randomQuoteImg["url"] = "https://lumenimages.s3.amazonaws.com/".($randomNumberImg+1).".jpg";
+        $randomQuoteImg["title"] = gethostbyname(gethostname());
         return view('image.show')->with("img",$randomQuoteImg);
+        
     }
 }

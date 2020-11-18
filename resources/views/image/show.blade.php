@@ -1,14 +1,7 @@
-@section('content')
-    <div class="row">
-        <div class="col-4 text-center d-lg-flex align-self-center justify-content-lg-start align-items-lg-end">
-            <div class="container">
-                <div class="card">
-                <div class="card-header"><b>Imagen</b></div>
-                    <div class="card-body">
-                        <img src="{{$img}}" width="110" height="110">
-                    </div>
-                </div>
-            </div>
+<div>
+    <div><b>{{$img["title"]}}</b>
+        <div>
+            <img src="{{$img['url']}}" alt="" width="500" heigth="500">
         </div>
     </div>
-@endsection
+</div>
