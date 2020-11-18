@@ -4,10 +4,13 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY . /var/www/html
 WORKDIR /var/www/html
 RUN composer install \
---ignore-platform-reqs \
---no-interaction \
---no-plugins \
---no-scripts \
---prefer-dist
+    --ignore-platform-reqs \
+    --no-interaction \
+    --no-plugins \
+    --no-scripts \
+    --prefer-dist
+
 RUN a2enmod rewrite
+RUN chmod -R 777 storage
+RUN chmod -R 777 bootstrap
 RUN service apache2 restart
