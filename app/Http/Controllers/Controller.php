@@ -16,11 +16,20 @@ class Controller extends BaseController
     );
 
     public function index()
-
     {
         $totalQuotes = (count(Controller::$quotes));
         $randomNumber = (rand(0,($totalQuotes-1)));
         $randomQuote = Controller::$quotes[$randomNumber];
         return response()->json(['quote' => $randomQuote, 'server_ip' => gethostbyname(gethostname())]);
+    }
+
+    public function randomImg()
+    {
+        $randomQuoteImg = [];
+        $randomNumberImg = (rand(0,(9)));
+        $randomQuoteImg["url"] = "https://lumenimages.s3.amazonaws.com/".($randomNumberImg+1).".jpg";
+        $randomQuoteImg["title"] = gethostbyname(gethostname());
+        return view('image.show')->with("img",$randomQuoteImg);
+        
     }
 }
