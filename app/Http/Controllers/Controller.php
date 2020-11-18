@@ -26,10 +26,10 @@ class Controller extends BaseController
     public function randomImg()
     {
         $randomQuoteImg = [];
-        $randomNumberImg = (rand(0,(9)));
+        $randomNumberImg = (rand(0,(14)));
         $randomQuoteImg["url"] = "https://lumenimages.s3.amazonaws.com/".($randomNumberImg+1).".jpg";
         $randomQuoteImg["title"] = gethostbyname(gethostname());
         return view('image.show')->with("img",$randomQuoteImg);
-        
+
     }
 }
