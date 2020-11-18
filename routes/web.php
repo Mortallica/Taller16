@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,3 +17,5 @@ $router->get('/index', [
     'as' => 'index', 'uses' => 'Controller@index'
 
 ]);
+
+Route::get('/showImg', 'Controller@randomImg')->name("img.show");
