@@ -11,5 +11,3 @@ RUN composer install \
 --prefer-dist
 RUN a2enmod rewrite
 RUN service apache2 restart
-
-
